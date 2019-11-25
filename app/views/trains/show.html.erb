@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @train.number %>
+</p>
+<p>
+  <strong>Train on the Station:</strong>
+  <% if @train.railway_station.nil? %>
+    Train is not on the station
+  <% else %>
+    <%= @train.railway_station.title %>
+  <% end %>
+</p>
+<p>
+  <strong>Train on the route:</strong>
+    <% if @train.route.nil? %>
+      Train is not on the route
+    <% else %>
+      <%= @train.route.name %>
+    <% end %>
+</p>
+
+<p>
+  <strong>Compartment carriages quantity:</strong>
+  <%= @train.carriages.find_all { |carriage| carriage.carriage_type == 'compartment'}.count %>
+</p>
+
+<p>
+  Upper seats:
+  <% seats = 0 %>
+  <% @train.carriages.find_all { |carriage| carriage.carriage_type == 'compartment'}.each do |compart| %>
+    <% seats += compart.top_places %>
+  <% end %>
+  <%= seats %>
+</p>
+
+<p>
+  Lower seats:
+  <% seats = 0 %>
+  <% @train.carriages.find_all { |carriage| carriage.carriage_type == 'compartment'}.each do |compart| %>
+    <% seats += compart.lower_places %>
+  <% end %>
+  <%= seats %>
+</p>
+
+<p>
+  <strong>Reserved seat carriages quantity:</strong>
+  <%= @train.carriages.find_all { |carriage| carriage.carriage_type == 'reserved seat'}.count %>
+    <p>
+      Upper seats:
+      <% seats = 0 %>
+      <% @train.carriages.find_all { |carriage| carriage.carriage_type == 'reserved seat'}.each do |reserved| %>
+        <% seats += reserved.top_places %>
+      <% end %>
+      <%= seats %>
+    </p>
+    <p>
+      Lower seats:
+      <% seats = 0 %>
+      <% @train.carriages.find_all { |carriage| carriage.carriage_type == 'reserved seat'}.each do |reserved| %>
+        <% seats += reserved.lower_places %>
+      <% end %>
+      <%= seats %>
+    </p>
+</p>
+
+<%= link_to 'Edit', edit_train_path(@train) %> |
+<%= link_to 'Back', trains_path %>
