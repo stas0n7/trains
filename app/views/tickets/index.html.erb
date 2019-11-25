@@ -1,0 +1,18 @@
+<h1>Tickets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Passanger:</th>
+      <thcolspan='3'></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @tickets %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New ticket', new_ticket_path %>
