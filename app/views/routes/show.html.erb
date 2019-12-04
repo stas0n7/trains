@@ -8,7 +8,7 @@
 <% if @route.trains.empty? %>
   <p>No trains on this route</p>
 <% else %>
-  <p>Trains on the route:</p>
+  <strong>Trains on the route:</strong>
   <ul>
     <% @route.trains.each do |train| %>
       <li><%= train.number %></li>
@@ -16,5 +16,18 @@
   </ul>
 <% end %>
 
-<%= link_to 'Edit', edit_route_path(@route) %> |
-<%= link_to 'Back', routes_path %>
+<% if @route.railway_stations.empty? %>
+  <strong>No stations on the route</strong>
+<% else %>
+  <strong>Stations on the route:</strong>
+  <ul>
+    <% @route.railway_stations.each do |station| %>
+        <li><%= station.title %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<p>
+  <%= link_to 'Edit', edit_route_path(@route) %> |
+  <%= link_to 'Back', routes_path %>
+</p>

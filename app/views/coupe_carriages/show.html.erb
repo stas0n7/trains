@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Coupe carriage ID:</strong>
+  <%= @coupe_carriage.id %>
+</p>
+
+<p>
+  <strong>coupe_carriage type:</strong>
+  <%= @coupe_carriage.type %>
+</p>
+
+<p>
+  <strong>Attached to the train:</strong>
+  <%= @coupe_carriage.train.number %>
+</p>
+
+<%= link_to 'Edit', edit_coupe_carriage_path(@coupe_carriage) %> |
+<%= link_to 'Back', carriages_path %>

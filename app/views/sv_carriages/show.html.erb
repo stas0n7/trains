@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>SV carriage ID:</strong>
+  <%= @sv_carriage.id %>
+</p>
+
+<p>
+  <strong>sv_carriage type:</strong>
+  <%= @sv_carriage.type %>
+</p>
+
+<p>
+  <strong>Attached to the train:</strong>
+  <%= @sv_carriage.train.number %>
+</p>
+
+<%= link_to 'Edit', edit_sv_carriage_path(@sv_carriage) %> |
+<%= link_to 'Back', carriages_path %>

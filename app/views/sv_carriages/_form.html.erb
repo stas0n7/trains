@@ -1,0 +1,23 @@
+<%= form_with(model: @sv_carriage, local: true) do |form| %>
+  <%= render 'common/errors', resource: @sv_carriage %>
+
+  <div class="field">
+    <%= form.label :train, "Attached to the train" %>
+    <%= form.collection_select :train_id, Train.all, :id, :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Number" %>
+    <%= form.text_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bottom_seats %>
+    <%= form.text_field :bottom_seats %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

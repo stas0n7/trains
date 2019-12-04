@@ -1,0 +1,18 @@
+<h1>Seated carriages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID:</th>
+      <thcolspan='3'></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @seated_carriages %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New seated carriage', new_seated_carriage_path %>

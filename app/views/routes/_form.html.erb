@@ -6,6 +6,12 @@
     <%= form.text_field :name %>
   </div>
 
+  <div class="field">
+    <%= form.label 'Stations' %>
+    <%= form.select :railway_station_ids, RailwayStation.all.map { |s| [s.title, s.id] }, {}, multiple: true %>
+  </div>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

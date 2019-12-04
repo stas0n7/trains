@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Economy carriage ID:</strong>
+  <%= @economy_carriage.id %>
+</p>
+
+<p>
+  <strong>economy_carriage type:</strong>
+  <%= @economy_carriage.type %>
+</p>
+
+<p>
+  <strong>Attached to the train:</strong>
+  <%= @economy_carriage.train.number %>
+</p>
+
+<%= link_to 'Edit', edit_economy_carriage_path(@economy_carriage) %> |
+<%= link_to 'Back', carriages_path %>

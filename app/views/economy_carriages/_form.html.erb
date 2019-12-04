@@ -1,5 +1,5 @@
-<%= form_with(model: @carriage, local: true) do |form| %>
-  <%= render 'common/errors', resource: @carriage %>
+<%= form_with(model: @economy_carriage, local: true) do |form| %>
+  <%= render 'common/errors', resource: @economy_carriage %>
 
   <div class="field">
     <%= form.label :train, "Attached to the train" %>
@@ -7,8 +7,8 @@
   </div>
 
   <div class="field">
-    <%= form.label "type" %>
-    <%= form.select(:carriage_type, options_for_select([['cupe', 'cupe'], ['economy', 'economy']])) %>
+    <%= form.label "Number" %>
+    <%= form.text_field :number %>
   </div>
 
   <div class="field">
@@ -21,10 +21,17 @@
     <%= form.text_field :bottom_seats %>
   </div>
 
+  <div class="field">
+    <%= form.label "Side topseats" %>
+    <%= form.text_field :side_top_seats %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Side bottom_seats" %>
+    <%= form.text_field :side_bottom_seats %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
-
-<%= link_to 'Back', carriages_path %>
