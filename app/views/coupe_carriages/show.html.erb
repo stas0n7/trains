@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Coupe carriage number:</strong>
+  <strong>Number:</strong>
   <%= @coupe_carriage.number %>
 </p>
 
 <p>
-  <strong>coupe_carriage type:</strong>
+  <strong>Type:</strong>
   <%= @coupe_carriage.type %>
 </p>
 
@@ -15,5 +15,15 @@
   <%= @coupe_carriage.train.number %>
 </p>
 
+<p>
+  Top seats:
+  <%= @coupe_carriage.top_seats %>
+</p>
+
+<p>
+  Bottom seats:
+  <%= @coupe_carriage.bottom_seats %>
+</p>
+
 <%= link_to 'Edit', edit_coupe_carriage_path(@coupe_carriage) %> |
-<%= link_to 'Back', carriages_path %>
+<%= link_to 'Back', :back %>

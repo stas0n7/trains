@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>seated carriage number:</strong>
+  <strong>Number:</strong>
   <%= @seated_carriage.number %>
 </p>
 
 <p>
-  <strong>seated_carriage type:</strong>
+  <strong>Type:</strong>
   <%= @seated_carriage.type %>
 </p>
 
@@ -15,5 +15,10 @@
   <%= @seated_carriage.train.number %>
 </p>
 
+<p>
+  Seated seats:
+  <%= @seated_carriage.seated_seats %>
+</p>
+
 <%= link_to 'Edit', edit_seated_carriage_path(@seated_carriage) %> |
-<%= link_to 'Back', carriages_path %>
+<%= link_to 'Back', :back %>
