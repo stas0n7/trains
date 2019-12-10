@@ -43,6 +43,6 @@ class SvCarriagesController < ApplicationController
   end
 
   def sv_carriage_params
-    params.require(:sv_carriage).permit(:train_id, :number, :bottom_seats)
+    params.require(:sv_carriage).permit(:train_id, :number, :bottom_seats, :serial_number)
   end
 end

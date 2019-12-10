@@ -43,6 +43,6 @@ class CoupeCarriagesController < ApplicationController
   end
 
   def coupe_carriage_params
-    params.require(:coupe_carriage).permit(:train_id, :number, :top_seats, :bottom_seats)
+    params.require(:coupe_carriage).permit(:train_id, :number, :top_seats, :bottom_seats, :serial_number)
   end
 end
