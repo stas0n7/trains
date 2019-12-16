@@ -43,6 +43,6 @@ class EconomyCarriagesController < ApplicationController
   end
 
   def economy_carriage_params
-    params.require(:economy_carriage).permit(:train_id, :number, :top_seats, :bottom_seats, :side_top_seats, :side_bottom_seats, :serial_number)
+    params.require(:economy_carriage).permit(:train_id, :number, :top_seats, :bottom_seats, :side_top_seats, :side_bottom_seats)
   end
 end

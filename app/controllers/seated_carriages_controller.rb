@@ -43,6 +43,6 @@ class SeatedCarriagesController < ApplicationController
   end
 
   def seated_carriage_params
-    params.require(:seated_carriage).permit(:train_id, :number, :seated_seats, :serial_number)
+    params.require(:seated_carriage).permit(:train_id, :number, :seated_seats)
   end
 end

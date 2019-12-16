@@ -3,7 +3,8 @@ class Carriage < ApplicationRecord
   validates :number, uniqueness: { scope: :train_id }
   belongs_to :train
 
-
+  scope :order_up, -> { order(:number) }
+  scope :order_down, -> { order(number: :desc) }
 
   before_validation :set_number, if: :train_id_changed?
 
