@@ -1,5 +1,6 @@
 class EconomyCarriagesController < ApplicationController
   before_action :set_economy_carriage, only: [:show, :edit, :update, :destroy]
+  before_action :set_train
   def index
     @economy_carriages = EconomyCarriage.all
   end
@@ -13,8 +14,9 @@ class EconomyCarriagesController < ApplicationController
 
   def create
     @economy_carriage = EconomyCarriage.new(economy_carriage_params)
+    @economy_carriage.train = @train
     if @economy_carriage.save
-      redirect_to @economy_carriage
+      redirect_to @train
     else
       render :new
     end
@@ -25,7 +27,7 @@ class EconomyCarriagesController < ApplicationController
 
   def update
     if @economy_carriage.update(economy_carriage_params)
-      redirect_to @economy_carriage
+      redirect_to [@train, @economy_carriage]
     else
       render :edit
     end
@@ -37,6 +39,10 @@ class EconomyCarriagesController < ApplicationController
   end
 
   private
+
+  def set_train
+    @train = Train.find(params[:train_id])
+  end
 
   def set_economy_carriage
     @economy_carriage = EconomyCarriage.find(params[:id])

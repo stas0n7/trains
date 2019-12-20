@@ -1,5 +1,6 @@
 class SeatedCarriagesController < ApplicationController
   before_action :set_seated_carriage, only: [:show, :edit, :update, :destroy]
+  before_action :set_train
   def index
     @seated_carriages = SeatedCarriage.all
   end
@@ -13,8 +14,9 @@ class SeatedCarriagesController < ApplicationController
 
   def create
     @seated_carriage = SeatedCarriage.new(seated_carriage_params)
+    @seated_carriage.train = @train
     if @seated_carriage.save
-      redirect_to @seated_carriage
+      redirect_to @train
     else
       render :new
     end
@@ -25,7 +27,7 @@ class SeatedCarriagesController < ApplicationController
 
   def update
     if @seated_carriage.update(seated_carriage_params)
-      redirect_to @seated_carriage
+      redirect_to [@train, @seated_carriage]
     else
       render :edit
     end
@@ -37,6 +39,10 @@ class SeatedCarriagesController < ApplicationController
   end
 
   private
+
+  def set_train
+    @train = Train.find(params[:train_id])
+  end
 
   def set_seated_carriage
     @seated_carriage = SeatedCarriage.find(params[:id])

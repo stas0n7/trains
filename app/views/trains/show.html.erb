@@ -6,22 +6,16 @@
 </p>
 
 <p>
+  <%= link_to "add coupe carriage", new_train_coupe_carriage_path(@train) %> |
+  <%= link_to "add economy carriage", new_train_economy_carriage_path(@train) %> |
+  <%= link_to "add SV carriage", new_train_sv_carriage_path(@train) %> |
+  <%= link_to "add seated carriage", new_train_seated_carriage_path(@train) %>
+</p>
+
+<p>
   <strong>Carriages :</strong>
   <% @train.carriages.each do |carriage| %>
-    <% case carriage.type %>
-      <% when "CoupeCarriage" %>
-      <% then %>
-      <%= link_to "#{carriage.number}", coupe_carriage_path(carriage) %>
-      <% when "EconomyCarriage" %>
-      <% then %>
-      <%= link_to "#{carriage.number}", economy_carriage_path(carriage) %>
-      <% when "SvCarriage" %>
-      <% then %>
-      <%= link_to "#{carriage.number}", sv_carriage_path(carriage) %>
-      <% when "SeatedCarriage" %>
-      <% then %>
-      <%= link_to "#{carriage.number}", seated_carriage_path(carriage) %>
-    <% end %>
+    <%= link_to "#{carriage.number}", [@train, carriage] %>
   <% end %>
 </p>
 

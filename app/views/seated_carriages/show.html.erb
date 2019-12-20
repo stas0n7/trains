@@ -20,5 +20,5 @@
   <%= @seated_carriage.seated_seats %>
 </p>
 
-<%= link_to 'Edit', edit_seated_carriage_path(@seated_carriage) %> |
-<%= link_to 'Back', :back %>
+<%= link_to 'Edit', edit_train_seated_carriage_path(@train, @seated_carriage) %> |
+<%= link_to 'Back', @seated_carriage.train %>

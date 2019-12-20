@@ -20,5 +20,5 @@
   <%= @sv_carriage.bottom_seats %>
 </p>
 
-<%= link_to 'Edit', edit_sv_carriage_path(@sv_carriage) %> |
-<%= link_to 'Back', :back %>
+<%= link_to 'Edit', edit_train_sv_carriage_path(@train, @sv_carriage) %> |
+<%= link_to 'Back', @sv_carriage.train %>
