@@ -1,11 +1,11 @@
 class SeatedCarriagesController < ApplicationController
-  before_action :set_seated_carriage, only: [:show, :edit, :update, :destroy]
-  before_action :set_train
+  before_action :set_train, only: [:new, :create]
   def index
     @seated_carriages = SeatedCarriage.all
   end
 
   def show
+    @seated_carriage = SeatedCarriage.find(params[:id])
   end
 
   def new
@@ -22,30 +22,10 @@ class SeatedCarriagesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-    if @seated_carriage.update(seated_carriage_params)
-      redirect_to [@train, @seated_carriage]
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @seated_carriage.destroy
-    redirect_to carriages_path
-  end
-
   private
 
   def set_train
     @train = Train.find(params[:train_id])
-  end
-
-  def set_seated_carriage
-    @seated_carriage = SeatedCarriage.find(params[:id])
   end
 
   def seated_carriage_params
