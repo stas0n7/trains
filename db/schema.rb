@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_21_134221) do
+ActiveRecord::Schema.define(version: 2019_12_22_105947) do
 
   create_table "carriages", force: :cascade do |t|
     t.string "type"
@@ -51,12 +51,19 @@ ActiveRecord::Schema.define(version: 2019_12_21_134221) do
     t.string "last_station"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "trains", force: :cascade do |t|
     t.string "number"
     t.integer "railway_station_id"
     t.integer "route_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
