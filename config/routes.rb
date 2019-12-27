@@ -10,8 +10,10 @@ Rails.application.routes.draw do
     resources :seated_carriages, shallow: true
   end
   resources :routes
-  resources :users
+  resources :users, except: [:edit, :update]
   resources :tickets
+
+  resource :search, only: [:new, :show]
 
   get 'welcome/index'
   root 'welcome#index'

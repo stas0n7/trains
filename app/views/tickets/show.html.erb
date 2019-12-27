@@ -1,18 +1,23 @@
-<p id="notice"><%= notice %></p>
+<p><strong>Ticket bought</strong></p>
 
 <p>
-  <strong>Passanger:</strong>
-  <%= @ticket.passanger %>
+  <strong>First name:</strong>
+  <%= @ticket.first_name %>
 </p>
 
 <p>
-  <strong>First station:</strong>
-  <%= @ticket.first_station %>
+  <strong>Last name:</strong>
+  <%= @ticket.last_name %>
 </p>
 
 <p>
-  <strong>Last station:</strong>
-  <%= @ticket.last_station %>
+  <strong>Route:</strong>
+  <%= @ticket.route %>
+</p>
+
+<p>
+  <strong>Train:</strong>
+  <%= @ticket.train.number %>
 </p>
 
 

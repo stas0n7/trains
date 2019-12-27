@@ -2,18 +2,30 @@
   <%= render 'common/errors', resource: @ticket %>
 
   <div class="field">
-    <%= form.label 'passanger' %>
-    <%= form.text_field :passanger %>
+    <%= form.label "Route:  #{@route.name}" %>
   </div>
 
   <div class="field">
-    <%= form.label 'first station' %>
-    <%= form.collection_select :first_station, RailwayStation.all, :title , :title %>
+    <%= form.label "Train:  #{@train.number}" %>
+  </div>
+
+  <div class'field'>
+    <%= form.hidden_field :train_id, value: @train.id %>
+  </div>
+
+  <div class='field'>
+    <%= form.label "choise your account" %>
+    <%= form.collection_select :user_id, User.all, :id, :name %>
   </div>
 
   <div class="field">
-    <%= form.label 'last station' %>
-    <%= form.collection_select :last_station, RailwayStation.all, :title , :title %>
+    <%= form.label 'first name' %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'last name' %>
+    <%= form.text_field :last_name %>
   </div>
 
 
