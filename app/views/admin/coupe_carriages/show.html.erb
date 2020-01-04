@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @coupe_carriage.number %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @coupe_carriage.type %>
+</p>
+
+<p>
+  <strong>Attached to the train:</strong>
+  <%= @coupe_carriage.train.number %>
+</p>
+
+<p>
+  Top seats:
+  <%= @coupe_carriage.top_seats %>
+</p>
+
+<p>
+  Bottom seats:
+  <%= @coupe_carriage.bottom_seats %>
+</p>
+
+<%= link_to 'Back', [:admin, @coupe_carriage.train] %>

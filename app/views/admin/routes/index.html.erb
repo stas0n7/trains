@@ -1,0 +1,19 @@
+<h1>Routes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <thcolspan='3'></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <%= render @routes %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New route', new_admin_route_path %>
+<p><%= link_to 'Back to main', root_path %></p>
