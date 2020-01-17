@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_03_172725) do
+ActiveRecord::Schema.define(version: 2020_01_17_173815) do
 
   create_table "carriages", force: :cascade do |t|
     t.string "type"
@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2020_01_03_172725) do
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.string "passanger"
     t.string "first_station"
     t.string "last_station"
     t.datetime "created_at", precision: 6, null: false
