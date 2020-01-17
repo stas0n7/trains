@@ -13,7 +13,6 @@ class TicketsController < ApplicationController
   def new
     @ticket = Ticket.new
     @train = Train.find(params[:train_id])
-    @route = Route.find(params[:route_id])
   end
 
   def show
