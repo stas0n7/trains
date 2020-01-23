@@ -8,6 +8,14 @@ ru:
     index:
       search_tickets: 'Поиск билетов'
   common:
+    header:
+      main_menu: 'Главная страница'
+      search: 'Поиск'
+      trains: 'Поезда'
+      railway_stations: 'Станции'
+      routes: 'Маршруты'
+      tickets: 'Билеты'
+    sign_up: 'Зарегистрироваться'
     show: 'Показать'
     edit: 'Редактировать'
     destroy: 'Удалить'
@@ -16,10 +24,6 @@ ru:
     login: 'Войти'
     logout: 'Выйти'
     email: 'Почта'
-    trains: 'Поезда'
-    railway_stations: 'Станции'
-    routes: 'Маршруты'
-    tickets: 'Билеты'
   admin:
     railway_stations:
       index:
