@@ -32,6 +32,12 @@ ru:
         title: 'Новая станция'
       form:
         submit: "%{action} станцию"
+    routes:
+      index:
+        new_route: 'Новый маршрут'
+    trains:
+      index:
+        new_train: 'Новый поезд'
   devise:
     sessions:
       new:

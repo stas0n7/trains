@@ -1,4 +1,4 @@
-<h1>Sold tickets</h1>
+<h2 class='text-center'>Sold tickets:</h2><br>
 
 <table>
   <thead>
@@ -7,13 +7,15 @@
       <th>Bought by:</th>
       <thcolspan='3'></th>
     </tr>
+    <style>
+      table {
+      width: 500px;
+      margin: auto;
+      }
+    </style>
   </thead>
 
   <tbody>
     <%= render @tickets %>
   </tbody>
 </table>
-
-<br>
-
-<p><%= link_to 'Back to main', root_path %></p>

@@ -1,8 +1,16 @@
 
-<p>
+<p align='center'>
   <strong>Title:</strong>
   <%= @railway_station.title %>
 </p>
+<p align='center'>Routes list which contain this station:</p>
+<p align='center'>
+  <% @railway_station.routes.each do |route| %>
+    <%= route.name %><br>
+  <% end %>
+</p>
 
-<%= link_to 'Edit', edit_admin_railway_station_path(@railway_station) %> |
-<%= link_to 'Back', admin_railway_stations_path %>
+<p align='center'>
+  <%= link_to 'Edit', edit_admin_railway_station_path(@railway_station) %> |
+  <%= link_to 'Back', admin_railway_stations_path %>
+</p>

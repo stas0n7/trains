@@ -1,18 +1,16 @@
 <h1 align='center'>Search</h1>
-<%= form_with(url: search_path, method: :get, local: true) do |f| %>
-
-  <div class='field'>
-    <%= f.label :start_station %>
-    <%= f.collection_select :start_id, RailwayStation.all, :id, :title %>
-  </div>
-
-  <div class='field'>
-    <%= f.label :end_station %>
-    <%= f.collection_select :end_id, RailwayStation.all, :id, :title %>
-  </div>
-
-  <div class'actions'>
-    <%= f.submit 'Search' %>
-  </div>
-<% end %>
-<p><%= link_to 'Back to main', welcome_index_path %></p>
+<div class="container">
+  <%= form_tag search_path, method: :get do %>
+    <div class="row">
+       <div class="col">
+         <%= select_tag :start_id, options_from_collection_for_select(@stations, :id, :title), class: "form-control" %>
+       </div>
+       <div class="col">
+         <%= select_tag :end_id, options_from_collection_for_select(@stations, :id, :title), class: "form-control" %>
+       </div>
+       <div class="col">
+         <%= submit_tag 'Search', class: 'btn btn-primary' %>
+       </div>
+    </div>
+  <% end %>
+</div>

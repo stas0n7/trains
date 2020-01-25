@@ -1,14 +1,13 @@
-<h2 align='center'>Found trains:</h2>
-<table>
+<h2 align='center'>Found trains:</h2><br>
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <td width='100px'><strong>Trains</strong></td>
-      <td width='200px'><strong>Route</strong></td>
-      <td width='200px'><strong>Stations</strong></td>
-      <td width='200px'><strong>Time Arrival-Depart</strong></td>
+      <td><strong>Trains</strong></td>
+      <td><strong>Route</strong></td>
+      <td><strong>Stations</strong></td>
+      <td><strong>Time Arrival-Depart</strong></td>
       <td><strong>Buy ticket</strong></td>
     </tr>
-
   </thead>
   <tbody>
     <% if @routes.empty? %>
@@ -32,7 +31,7 @@
             <td>
               <%= form_tag new_ticket_path, method: :get do %>
                 <%= hidden_field_tag :train_id, train.id %>
-                <%= submit_tag 'Buy' %>
+                <%= submit_tag 'Buy', class: 'btn btn-primary' %>
               <% end %>
             </td>
           <tr>
@@ -41,5 +40,6 @@
     <% end %>
   </tbody>
 </table>
+<br><br>
 
-<p align='center'><%= link_to 'back to search', new_search_path %></p>
+<p align='center'><%= link_to 'back to search', new_search_path, class: 'btn btn-primary' %></p>
