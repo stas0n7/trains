@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_18_144728) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 2020_01_26_212031) do
 
   create_table "carriages", force: :cascade do |t|
     t.string "type"
@@ -84,10 +81,6 @@ ActiveRecord::Schema.define(version: 2020_01_18_144728) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
     t.boolean "admin", default: false
     t.string "surname"
     t.index ["email"], name: "index_users_on_email", unique: true
