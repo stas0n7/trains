@@ -1,18 +1,18 @@
-<h2 align='center'>Found trains:</h2><br>
-<table class="table table-bordered table-hover">
-  <thead>
-    <tr>
-      <td><strong>Trains</strong></td>
-      <td><strong>Route</strong></td>
-      <td><strong>Stations</strong></td>
-      <td><strong>Time Arrival-Depart</strong></td>
-      <td><strong>Buy ticket</strong></td>
-    </tr>
-  </thead>
-  <tbody>
-    <% if @routes.empty? %>
-      <h2 align='center'>Trains not found</h2>
-    <% else %>
+<% if @trains.nil? %>
+  <h2 align='center'>Trains not found</h2>
+<% else %>
+  <h2 align='center'>Found trains:</h2><br>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <td><strong>Trains</strong></td>
+        <td><strong>Route</strong></td>
+        <td><strong>Stations</strong></td>
+        <td><strong>Time Arrival-Depart</strong></td>
+        <td><strong>Buy ticket</strong></td>
+      </tr>
+    </thead>
+    <tbody>
       <% @routes.each do |route| %>
         <% route.trains.each do |train| %>
           <tr>
@@ -37,9 +37,9 @@
           <tr>
         <% end %>
       <% end %>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+<% end %>
 <br><br>
 
 <p align='center'><%= link_to 'back to search', new_search_path, class: 'btn btn-primary' %></p>
