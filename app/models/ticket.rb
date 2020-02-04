@@ -2,10 +2,12 @@ class Ticket < ApplicationRecord
   belongs_to :user
   belongs_to :train
 
-  after_create :buy_notification
-  after_destroy :cancel_notification
+## dont work in heroku production without addon
+#  after_create :buy_notification
+#  after_destroy :cancel_notification
 
-  private
+
+ private
 
   def buy_notification
     TicketsMailer.buy_ticket(user, self).deliver_now
