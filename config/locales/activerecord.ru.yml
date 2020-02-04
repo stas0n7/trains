@@ -12,9 +12,13 @@ ru:
         route: 'Маршрут'
     errors:
       messages:
-        blank: 'Не может быть пустым'
+        blank: 'не может быть пустым'
       models:
         railway_station:
           attributes:
             title:
               blank: 'Должно быть указано'
+        train:
+          attributes:
+            number:
+              taken: 'уже занят'

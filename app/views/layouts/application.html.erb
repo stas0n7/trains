@@ -10,15 +10,16 @@
   </head>
 
   <body>
+    <center>
+      <%= render "common/header" %>
 
-    <%= render "common/header" %>
+      <p id='notice' class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
-    <p align='center' id='notice' class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= yield %>
-    <br>
-    <%= render 'common/footer' %>
+      <%= yield %>
+      <br>
+      <%= render 'common/footer' %>
+    </center>
   </body>
 
 </html>

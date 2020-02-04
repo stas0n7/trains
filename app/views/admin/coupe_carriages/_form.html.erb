@@ -3,17 +3,16 @@
 
 
   <div class="field">
-    <%= form.label :top_seats %>
-    <%= form.text_field :top_seats %>
+    <%= form.label :top_seats %><br>
+    <%= form.text_field :top_seats, class: 'form-control col-3' %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label :bottom_seats %>
-    <%= form.text_field :bottom_seats %>
+    <%= form.label :bottom_seats %><br>
+    <%= form.text_field :bottom_seats, class: 'form-control col-3' %>
   </div>
-
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

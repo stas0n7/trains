@@ -3,21 +3,16 @@
   <%= render 'common/errors', resource: @train %>
 
   <div class="field">
-    <%= form.label :number %>
-    <%= form.text_field :number %>
+    <%= form.label :number %><br>
+    <%= form.text_field :number, class: 'form-control col-3' %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label :railway_station %>
-    <%= form.collection_select :railway_station_id, RailwayStation.all, :id, :title %>
+    <%= form.label :route %><br>
+    <%= form.collection_select :route_id, Route.all, :id, :name, {}, class: 'form-control col-3' %>
   </div>
-
-  <div class="field">
-    <%= form.label :route %>
-    <%= form.collection_select :route_id, Route.all, :id, :name %>
-  </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

@@ -5,11 +5,11 @@
 
   <div class="field">
     <%= f.label t('common.email') %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control col-3' %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= f.submit t('.send_me_reset_password_instructions') %>
+    <%= f.submit t('.send_me_reset_password_instructions'), class: 'btn btn-primary' %>
   </div>
 <% end %>
 
