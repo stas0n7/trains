@@ -1,12 +1,11 @@
-<%= form_with(model: [:admin, @railway_station], local: true) do |form| %>
+<%= form_with(model: [:admin, station], html: { style: 'display:none', class: "form_station_#{station.id}" }, local: true) do |form| %>
 
-  <%= render 'common/errors', resource: @railway_station %>
+  <%= render 'common/errors', resource: station %>
 
   <div class="field">
-    <%= form.text_field :title, class: 'form-control col-md-3' %>
+    <%= form.text_field :title, class: 'form-control form-control-sm' %>
   </div>
-  <br>
   <div class="actions">
-    <%= form.submit t('.submit', action: @railway_station.new_record? ? 'Создать' : 'Изменить'), class: 'btn btn-primary' %>
+    <%= form.submit t('.submit'), class: 'btn btn-primary btn-sm' %>
   </div>
 <% end %>

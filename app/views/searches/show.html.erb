@@ -1,7 +1,7 @@
 <% if @trains.nil? %>
-  <h2 align='center'>Trains not found</h2>
+  <h2>Trains not found</h2>
 <% else %>
-  <h2 align='center'>Found trains:</h2><br>
+  <h2>Found trains:</h2><br>
   <table class="table table-bordered table-hover">
     <thead>
       <tr>
@@ -42,4 +42,4 @@
 <% end %>
 <br><br>
 
-<p align='center'><%= link_to 'back to search', new_search_path, class: 'btn btn-primary' %></p>
+<p><%= link_to 'back to search', new_search_path, class: 'btn btn-primary' %></p>

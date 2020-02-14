@@ -1,0 +1,24 @@
+ru:
+  activerecord:
+    models:
+      railway_station: 'Station'
+      train: 'Train'
+    attributes:
+      railway_station:
+        title: 'Title'
+      train:
+        number: 'Number'
+        railway_station: 'Station'
+        route: 'Route'
+    errors:
+      messages:
+        blank: "can't be blanc"
+      models:
+        railway_station:
+          attributes:
+            title:
+              blank: 'Should be present'
+        train:
+          attributes:
+            number:
+              taken: 'already taken'
