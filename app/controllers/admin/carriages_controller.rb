@@ -1,48 +1,32 @@
 class Admin::CarriagesController < Admin::BaseController
-  before_action :set_carriage, only: [:show, :edit, :update, :destroy]
-  def index
-    @carriages = Carriage.all
-  end
+  before_action :set_train, only: [:new, :create]
 
   def show
+    @carriage = Carriage.find(params[:id])
   end
 
   def new
+    @train = Train.find(params[:train_id])
     @carriage = Carriage.new
   end
 
   def create
     @carriage = Carriage.new(carriage_params)
+    @carriage.train = @train
     if @carriage.save
-      redirect_to @carriage
+      redirect_to [:admin, @carriage]
     else
       render :new
     end
   end
 
-  def edit
-  end
-
-  def update
-    if @carriage.update(carriage_params)
-      redirect_to @carriage
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @carriage.destroy
-    redirect_to carriages_path
-  end
-
   private
 
-  def set_carriage
-    @carriage = Carriage.find(params[:id])
+  def set_train
+    @train = Train.find(params[:train_id])
   end
 
   def carriage_params
-    params.require(:carriage).permit(:train_id, :number)
+    params.require(:carriage).permit(:train_id, :type, :number, :top_seats, :bottom_seats, :side_top_seats, :side_bottom_seats, :seated_seats)
   end
 end

@@ -3,6 +3,7 @@
     <strong>Number:</strong>
     <%= @train.number %>
   </p>
+  <p><%= link_to 'add Carriage', new_admin_train_carriage_path(@train) %></p>
 
   <p>
     <%= link_to "add coupe carriage", new_admin_train_coupe_carriage_path(@train) %> |

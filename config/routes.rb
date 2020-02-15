@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       patch :update_position, on: :member
     end
     resources :trains do
-      resources :carriages, shallow: true
+      resources :carriages, only: [:new, :create, :show], shallow: true
       resources :coupe_carriages, only: [:new, :create, :show], shallow: true
       resources :economy_carriages, only: [:new, :create, :show], shallow: true
       resources :sv_carriages, only: [:new, :create, :show], shallow: true
