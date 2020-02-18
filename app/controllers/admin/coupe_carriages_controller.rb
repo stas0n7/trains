@@ -1,5 +1,4 @@
-class Admin::CoupeCarriagesController < Admin::BaseController
-  before_action :set_train, only: [:new, :create]
+class Admin::CoupeCarriagesController < Admin::CarriagesController
 
   def show
     @coupe_carriage = CoupeCarriage.find(params[:id])
@@ -20,10 +19,6 @@ class Admin::CoupeCarriagesController < Admin::BaseController
   end
 
   private
-
-  def set_train
-    @train = Train.find(params[:train_id])
-  end
 
   def coupe_carriage_params
     params.require(:coupe_carriage).permit(:train_id, :number, :top_seats, :bottom_seats)

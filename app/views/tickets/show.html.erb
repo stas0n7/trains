@@ -1,12 +1,12 @@
 <p><strong>Ticket bought</strong> <%= @ticket.user.email %></p>
 
 <p>
-  <strong>First name:</strong>
+  <strong>Passenger name:</strong>
   <%= @ticket.first_name %>
 </p>
 
 <p>
-  <strong>Last name:</strong>
+  <strong>Passenger surname:</strong>
   <%= @ticket.last_name %>
 </p>
 
@@ -20,4 +20,8 @@
   <%= @ticket.train.number %>
 </p>
 
-<%= link_to 'Back', tickets_path %>
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to 'Back', admin_tickets_path %>
+<% else %>
+  <%= link_to 'Back', tickets_path %>
+<% end %>

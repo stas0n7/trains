@@ -1,95 +1,88 @@
-<span style="text-align: center;">
-  <p>
-    <strong>Number:</strong>
-    <%= @train.number %>
-  </p>
-  <p><%= link_to 'add Carriage', new_admin_train_carriage_path(@train) %></p>
 
-  <p>
-    <%= link_to "add coupe carriage", new_admin_train_coupe_carriage_path(@train) %> |
-    <%= link_to "add economy carriage", new_admin_train_economy_carriage_path(@train) %> |
-    <%= link_to "add SV carriage", new_admin_train_sv_carriage_path(@train) %> |
-    <%= link_to "add seated carriage", new_admin_train_seated_carriage_path(@train) %>
-  </p>
+<p>
+  <strong>Number:</strong>
+  <%= @train.number %>
+</p>
+<p><%= link_to 'add Carriage', new_admin_train_carriage_path(@train) %></p>
 
-  <p>
-    <strong>Carriages :</strong>
-    <% @train.carriages.each do |carriage| %>
-      <%= link_to "№#{carriage.number}", [:admin, carriage] %>
-    <% end %>
-  </p>
+<p>
+  <strong>Carriages :</strong>
+  <% @train.carriages.each do |carriage| %>
+    <%= link_to "№#{carriage.number}", [:admin, carriage] %>
+  <% end %>
+</p>
 
-  <p>
-    <strong>Train on the Station:</strong>
-    <% if @train.railway_station.nil? %>
-      Train is not on the station
+<p>
+  <strong>Train on the Station:</strong>
+  <% if @train.railway_station.nil? %>
+    Train is not on the station
+  <% else %>
+    <%= @train.railway_station.title %>
+  <% end %>
+</p>
+<p>
+  <strong>Train on the route:</strong>
+    <% if @train.route.nil? %>
+      Train is not on the route
     <% else %>
-      <%= @train.railway_station.title %>
+      <%= @train.route.name %>
     <% end %>
-  </p>
-  <p>
-    <strong>Train on the route:</strong>
-      <% if @train.route.nil? %>
-        Train is not on the route
-      <% else %>
-        <%= @train.route.name %>
-      <% end %>
-  </p>
+</p>
 
-  <p>
-    <strong>Cupe carriages quantity:</strong>
-    <%= @train.carriages.coupe.count %>
-  </p>
-  <p>
-    Top seats:
-    <%= @train.carriages.coupe.sum(:top_seats) %>
-  </p>
-  <p>
-    Bottom seats:
-    <%= @train.carriages.coupe.sum(:bottom_seats) %>
-  </p>
+<p>
+  <strong>Cupe carriages quantity:</strong>
+  <%= @train.carriages.coupe.count %>
+</p>
+<p>
+  Top seats:
+  <%= @train.carriages.coupe.sum(:top_seats) %>
+</p>
+<p>
+  Bottom seats:
+  <%= @train.carriages.coupe.sum(:bottom_seats) %>
+</p>
 
-  <p>
-    <strong>Economy carriages quantity:</strong>
-    <%= @train.carriages.economy.count %>
-  </p>
-  <p>
-    Top seats:
-    <%= @train.carriages.economy.sum(:top_seats) %>
-  </p>
-  <p>
-    Bottom seats:
-    <%= @train.carriages.economy.sum(:bottom_seats) %>
-  </p>
-  <p>
-    Side top seats:
-    <%= @train.carriages.economy.sum(:side_top_seats) %>
-  </p>
-  <p>
-    Side bottom seats:
-    <%= @train.carriages.economy.sum(:side_bottom_seats) %>
-  </p>
+<p>
+  <strong>Economy carriages quantity:</strong>
+  <%= @train.carriages.economy.count %>
+</p>
+<p>
+  Top seats:
+  <%= @train.carriages.economy.sum(:top_seats) %>
+</p>
+<p>
+  Bottom seats:
+  <%= @train.carriages.economy.sum(:bottom_seats) %>
+</p>
+<p>
+  Side top seats:
+  <%= @train.carriages.economy.sum(:side_top_seats) %>
+</p>
+<p>
+  Side bottom seats:
+  <%= @train.carriages.economy.sum(:side_bottom_seats) %>
+</p>
 
-  <p>
-    <strong>SV carriages quantity:</strong>
-    <%= @train.carriages.sv.count %>
-  </p>
-  <p>
-    Bottom seats:
-    <%= @train.carriages.sv.sum(:bottom_seats) %>
-  </p>
+<p>
+  <strong>SV carriages quantity:</strong>
+  <%= @train.carriages.sv.count %>
+</p>
+<p>
+  Bottom seats:
+  <%= @train.carriages.sv.sum(:bottom_seats) %>
+</p>
 
-  <p>
-    <strong>Seated carriages quantity:</strong>
-    <%= @train.carriages.seated.count %>
-  </p>
-  <p>
-    Seated seats:
-    <%= @train.carriages.seated.sum(:seated_seats) %>
-  </p>
+<p>
+  <strong>Seated carriages quantity:</strong>
+  <%= @train.carriages.seated.count %>
+</p>
+<p>
+  Seated seats:
+  <%= @train.carriages.seated.sum(:seated_seats) %>
+</p>
 
-  <p>
-    <%= link_to 'Edit', edit_admin_train_path(@train) %> |
-    <%= link_to 'Back', admin_trains_path %>
-  </p>
-</span>
+<p>
+  <%= link_to 'Edit', edit_admin_train_path(@train) %> |
+  <%= link_to 'Back', admin_trains_path %>
+</p>
+

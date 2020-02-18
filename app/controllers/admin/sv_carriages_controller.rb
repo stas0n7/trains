@@ -1,5 +1,4 @@
-class Admin::SvCarriagesController < Admin::BaseController
-  before_action :set_train, only: [:new, :create]
+class Admin::SvCarriagesController < Admin::CarriagesController
 
   def show
     @sv_carriage = SvCarriage.find(params[:id])
@@ -20,10 +19,6 @@ class Admin::SvCarriagesController < Admin::BaseController
   end
 
   private
-
-  def set_train
-    @train = Train.find(params[:train_id])
-  end
 
   def sv_carriage_params
     params.require(:sv_carriage).permit(:train_id, :number, :bottom_seats)

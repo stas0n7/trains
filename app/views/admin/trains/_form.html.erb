@@ -3,10 +3,9 @@
   <%= render 'common/errors', resource: @train %>
 
   <div class="field">
-    <%= form.label :number %><br>
-    <%= form.text_field :number, class: 'form-control col-3' %>
-  </div>
-  <br>
+    <%= form.text_field :number, class: 'form-control col-3', required: true, placeholder: "Number" %>
+  </div><br>
+
   <div class="field">
     <%= form.label :route %><br>
     <%= form.collection_select :route_id, Route.all, :id, :name, {}, class: 'form-control col-3' %>

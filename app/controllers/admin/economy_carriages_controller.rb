@@ -1,5 +1,4 @@
-class Admin::EconomyCarriagesController < Admin::BaseController
-  before_action :set_train, only: [:new, :create]
+class Admin::EconomyCarriagesController < Admin::CarriagesController
 
   def show
     @economy_carriage = EconomyCarriage.find(params[:id])
@@ -20,10 +19,6 @@ class Admin::EconomyCarriagesController < Admin::BaseController
   end
 
   private
-
-  def set_train
-    @train = Train.find(params[:train_id])
-  end
 
   def economy_carriage_params
     params.require(:economy_carriage).permit(:train_id, :number, :top_seats, :bottom_seats, :side_top_seats, :side_bottom_seats)

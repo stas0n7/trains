@@ -5,7 +5,7 @@
   <%= render 'common/errors', resource: @railway_station %>
 
   <div class="field">
-    <%= form.text_field :title, class: 'form-control col-3' %>
+    <%= form.text_field :title, class: 'form-control col-3', required: true, placeholder: 'input title' %>
   </div>
   <br>
   <div class="actions">
