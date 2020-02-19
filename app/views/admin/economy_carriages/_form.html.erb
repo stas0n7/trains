@@ -3,25 +3,25 @@
 
   <div class="field">
     <%= form.label :top_seats %>
-    <%= form.text_field :top_seats %>
+    <%= form.text_field :top_seats, class: 'form-control col-3' %>
   </div>
 
   <div class="field">
     <%= form.label :bottom_seats %>
-    <%= form.text_field :bottom_seats %>
+    <%= form.text_field :bottom_seats, class: 'form-control col-3' %>
   </div>
 
   <div class="field">
     <%= form.label "Side topseats" %>
-    <%= form.text_field :side_top_seats %>
+    <%= form.text_field :side_top_seats, class: 'form-control col-3' %>
   </div>
 
   <div class="field">
     <%= form.label "Side bottom_seats" %>
-    <%= form.text_field :side_bottom_seats %>
+    <%= form.text_field :side_bottom_seats, class: 'form-control col-3' %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

@@ -1,18 +1,20 @@
-<h1>Sold tickets</h1>
+<h2 class='text-center'>Bought tickets:</h2>
 
 <table>
   <thead>
     <tr>
       <th>Passanger:</th>
-      <thcolspan='3'></th>
+      <thcolspan='2'></th>
     </tr>
-  </thead>
+    <style>
+    table {
+     width: 500px;
+     margin: auto;
+    }
+   </style>
+  </thead><br>
 
   <tbody>
     <%= render @tickets %>
   </tbody>
 </table>
-
-<br>
-
-<p><%= link_to 'Back to main', welcome_index_path %></p>

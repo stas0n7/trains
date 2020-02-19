@@ -1,11 +1,13 @@
-<p><%= link_to t('common.trains'), admin_trains_path %></p>
-<p><%= link_to t('common.routes'), admin_routes_path %></p>
-<p><%= link_to t('common.railway_stations'), admin_railway_stations_path %></p>
+<p><h5>Учебный проект базового рукса по Ruby on Rails.</h5></p>
+<p><h5>Код проекта <a href="https://github.com/stas0n7/trains/tree/lesson19">тут</a></h5></p>
+<br>
+<p><strong>Админ аккаунт:</strong></p>
+<p>Почта: admin@admin.com</p>
+<p>Пароль: 111111</p>
+<br>
+<p><strong>Пользовательский аккаунт:</strong></p>
+<p>Почта: test@test.com</p>
+<p>Пароль: 111111</p>
 
-<% if user_signed_in? && current_user.admin? %>
-  <p><%= link_to t('common.tickets'), admin_tickets_path %></p>
-<% else %>
-  <p><%= link_to t('common.tickets'), tickets_path %></p>
-<% end %>
 
-<p align='center'><%= link_to t('.search_tickets'), new_search_path %></p>
+

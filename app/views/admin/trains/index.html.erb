@@ -1,4 +1,4 @@
-<h1><%= t('common.trains') %></h1>
+<h2 class='text-center'><%= t('common.trains') %></h2>
 
 <table>
   <thead>
@@ -6,14 +6,19 @@
       <th>Number</th>
       <thcolspan='3'></th>
     </tr>
+    <style>
+      table {
+      width: 500px;
+      margin: auto;
+      }
+    </style>
   </thead>
 
   <tbody>
     <%= render @trains %>
   </tbody>
 </table>
-
 <br>
 
-<%= link_to 'New Train', new_admin_train_path %>
-<p><%= link_to 'Back to main', root_path %></p>
+<p align='center'><%= link_to t('.new_train'), new_admin_train_path %></p>
+<p align='center'><%= link_to t('common.back'), root_path %></p>

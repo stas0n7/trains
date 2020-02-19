@@ -3,10 +3,10 @@
 
   <div class="field">
     <%= form.label "Seated seats" %>
-    <%= form.text_field :seated_seats %>
+    <%= form.text_field :seated_seats, class: 'form-control col-3' %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

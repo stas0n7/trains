@@ -1,23 +1,25 @@
-<p><strong>Ticket bought</strong> <%= @ticket.user.email %></p>
+<span style='text-align: center;'>
+  <p><strong>Ticket bought</strong> <%= @ticket.user.email %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @ticket.first_name %>
-</p>
+  <p>
+    <strong>First name:</strong>
+    <%= @ticket.first_name %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @ticket.last_name %>
-</p>
+  <p>
+    <strong>Last name:</strong>
+    <%= @ticket.last_name %>
+  </p>
 
-<p>
-  <strong>Route:</strong>
-  <%= @ticket.route %>
-</p>
+  <p>
+    <strong>Route:</strong>
+    <%= @ticket.train.route.name %>
+  </p>
 
-<p>
-  <strong>Train:</strong>
-  <%= @ticket.train.number %>
-</p>
+  <p>
+    <strong>Train:</strong>
+    <%= @ticket.train.number %>
+  </p>
 
-<%= link_to 'Back', admin_tickets_path %>
+  <p><%= link_to t('common.back'), admin_tickets_path %></p>
+</span>

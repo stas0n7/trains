@@ -5,17 +5,17 @@
 
   <div class="field">
     <%= f.label t('common.email') %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control col-3' %>
   </div>
 
   <div class="field">
-    <%= f.label t('.name') %>
-    <%= f.text_field :name %>
+    <%= f.label t('.name') %><br />
+    <%= f.text_field :name, class: 'form-control col-3' %>
   </div>
 
   <div class="field">
-    <%= f.label t('.surname') %>
-    <%= f.text_field :surname %>
+    <%= f.label t('.surname') %><br />
+    <%= f.text_field :surname, class: 'form-control col-3' %>
   </div>
 
   <div class="field">
@@ -23,16 +23,16 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> <%= t('.characters_minimum') %>)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: 'form-control col-3' %>
   </div>
 
   <div class="field">
     <%= f.label t('.password_confirmation') %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control col-3' %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= f.submit t('.sign_up') %>
+    <%= f.submit t('.sign_up'), class: 'btn btn-primary' %>
   </div>
 <% end %>
 

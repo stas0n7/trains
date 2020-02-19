@@ -10,7 +10,7 @@ class Admin::TicketsController < Admin::BaseController
 
   def update
     if @ticket.update(params_ticket)
-      redirect_to @ticket
+      redirect_to [:admin, @ticket]
     else
       render :edit
     end

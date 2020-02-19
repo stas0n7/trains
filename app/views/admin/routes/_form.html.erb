@@ -3,11 +3,11 @@
 
   <div class="field">
     <%= form.label 'Stations' %>
-    <%= form.select :railway_station_ids, RailwayStation.all.map { |s| [s.title, s.id] }, {}, multiple: true %>
+    <%= form.select :railway_station_ids, RailwayStation.all.map { |s| [s.title, s.id] }, {}, multiple: true,
+    class: 'form-control col-3' %>
   </div>
-
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

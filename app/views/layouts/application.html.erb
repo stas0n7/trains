@@ -10,21 +10,16 @@
   </head>
 
   <body>
+    <center>
+      <%= render "common/header" %>
 
-  <p id='notice' class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+      <p id='notice' class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
-  <% if user_signed_in? %>
-    <%= link_to t('common.logout'), destroy_user_session_path, method: :delete %>
-    <p><%= t('.account') %> <%= current_user.email %></p>
-  <% else %>
-    <%= link_to t('common.login'), new_user_session_path %>
-  <% end %>
-
-    <%= yield %>
-    <footer>
-      &copy; Стас Литвиненко
-    </footer>
+      <%= yield %>
+      <br>
+      <%= render 'common/footer' %>
+    </center>
   </body>
 
 </html>
