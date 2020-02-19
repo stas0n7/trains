@@ -4,6 +4,21 @@
   <strong>Number:</strong>
   <%= @train.number %>
 </p>
+
+<p>
+  <%= link_to "add coupe carriage", new_train_coupe_carriage_path(@train) %> |
+  <%= link_to "add economy carriage", new_train_economy_carriage_path(@train) %> |
+  <%= link_to "add SV carriage", new_train_sv_carriage_path(@train) %> |
+  <%= link_to "add seated carriage", new_train_seated_carriage_path(@train) %>
+</p>
+
+<p>
+  <strong>Carriages :</strong>
+  <% @train.carriages.each do |carriage| %>
+    <%= link_to "#{carriage.number}", [@train, carriage] %>
+  <% end %>
+</p>
+
 <p>
   <strong>Train on the Station:</strong>
   <% if @train.railway_station.nil? %>
@@ -21,49 +36,49 @@
     <% end %>
 </p>
 
-<p>
-  <strong>Compartment carriages quantity:</strong>
-  <%= @train.carriages.find_all { |carriage| carriage.carriage_type == 'compartment'}.count %>
-</p>
+<strong>Cupe carriages quantity:</strong>
+<%= @train.carriages.coupe.count %>
+  <p>
+    Top seats:
+    <%= @train.carriages.coupe.sum(:top_seats) %>
+  </p>
+  <p>
+    Bottom seats:
+    <%= @train.carriages.coupe.sum(:bottom_seats) %>
+  </p>
 
-<p>
-  Upper seats:
-  <% seats = 0 %>
-  <% @train.carriages.find_all { |carriage| carriage.carriage_type == 'compartment'}.each do |compart| %>
-    <% seats += compart.top_places %>
-  <% end %>
-  <%= seats %>
-</p>
+<strong>Economy carriages quantity:</strong>
+<%= @train.carriages.economy.count %>
+  <p>
+    Top seats:
+    <%= @train.carriages.economy.sum(:top_seats) %>
+  </p>
+  <p>
+    Bottom seats:
+    <%= @train.carriages.economy.sum(:bottom_seats) %>
+  </p>
+  <p>
+    Side top seats:
+    <%= @train.carriages.economy.sum(:side_top_seats) %>
+  </p>
+  <p>
+    Side bottom seats:
+    <%= @train.carriages.economy.sum(:side_bottom_seats) %>
+  </p>
 
-<p>
-  Lower seats:
-  <% seats = 0 %>
-  <% @train.carriages.find_all { |carriage| carriage.carriage_type == 'compartment'}.each do |compart| %>
-    <% seats += compart.lower_places %>
-  <% end %>
-  <%= seats %>
-</p>
+<strong>SV carriages quantity:</strong>
+<%= @train.carriages.sv.count %>
+  <p>
+    Bottom seats:
+    <%= @train.carriages.sv.sum(:bottom_seats) %>
+  </p>
 
-<p>
-  <strong>Reserved seat carriages quantity:</strong>
-  <%= @train.carriages.find_all { |carriage| carriage.carriage_type == 'reserved seat'}.count %>
-    <p>
-      Upper seats:
-      <% seats = 0 %>
-      <% @train.carriages.find_all { |carriage| carriage.carriage_type == 'reserved seat'}.each do |reserved| %>
-        <% seats += reserved.top_places %>
-      <% end %>
-      <%= seats %>
-    </p>
-    <p>
-      Lower seats:
-      <% seats = 0 %>
-      <% @train.carriages.find_all { |carriage| carriage.carriage_type == 'reserved seat'}.each do |reserved| %>
-        <% seats += reserved.lower_places %>
-      <% end %>
-      <%= seats %>
-    </p>
-</p>
+<strong>Seated carriages quantity:</strong>
+<%= @train.carriages.seated.count %>
+  <p>
+    Seated seats:
+    <%= @train.carriages.seated.sum(:seated_seats) %>
+  </p>
 
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>

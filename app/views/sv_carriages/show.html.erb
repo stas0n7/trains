@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @sv_carriage.number %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @sv_carriage.type %>
+</p>
+
+<p>
+  <strong>Attached to the train:</strong>
+  <%= @sv_carriage.train.number %>
+</p>
+
+<p>
+  Bottom seats:
+  <%= @sv_carriage.bottom_seats %>
+</p>
+
+<%= link_to 'Edit', edit_train_sv_carriage_path(@train, @sv_carriage) %> |
+<%= link_to 'Back', @sv_carriage.train %>

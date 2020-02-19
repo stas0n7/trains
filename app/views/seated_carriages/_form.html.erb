@@ -1,0 +1,12 @@
+<%= form_with(model: [@train, @seated_carriage], local: true) do |form| %>
+  <%= render 'common/errors', resource: @seated_carriage %>
+
+  <div class="field">
+    <%= form.label "Seated seats" %>
+    <%= form.text_field :seated_seats %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

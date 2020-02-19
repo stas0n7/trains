@@ -8,17 +8,17 @@
 
   <div class="field">
     <%= form.label "type" %>
-    <%= form.select(:carriage_type, options_for_select([['compartment', 'compartment'], ['reserved seat', 'reserved seat']])) %>
+    <%= form.select(:carriage_type, options_for_select([['cupe', 'cupe'], ['economy', 'economy']])) %>
   </div>
 
   <div class="field">
-    <%= form.label :top_places %>
-    <%= form.text_field :top_places %>
+    <%= form.label :top_seats %>
+    <%= form.text_field :top_seats %>
   </div>
 
   <div class="field">
-    <%= form.label :lower_places %>
-    <%= form.text_field :lower_places %>
+    <%= form.label :bottom_seats %>
+    <%= form.text_field :bottom_seats %>
   </div>
 
 

@@ -6,9 +6,9 @@
 </p>
 
 <% if @route.trains.empty? %>
-  <p>No trains on this route</p>
+  <p><strong>No trains on this route</strong></p>
 <% else %>
-  <p>Trains on the route:</p>
+  <strong>Trains on the route:</strong>
   <ul>
     <% @route.trains.each do |train| %>
       <li><%= train.number %></li>
@@ -16,5 +16,35 @@
   </ul>
 <% end %>
 
-<%= link_to 'Edit', edit_route_path(@route) %> |
-<%= link_to 'Back', routes_path %>
+<% if @route.railway_stations.empty? %>
+  <strong>No stations on the route</strong>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <td width='100px'>Station</td>
+        <td>Position</td>
+      </tr>
+    </thead>
+    <tbody>
+    <% @route.railway_stations.ordered.each do |station| %>
+      <tr>
+        <td><%= station.title %></td>
+        <td>
+          <%= form_tag update_position_railway_station_path, method: :patch do %>
+            <%= number_field_tag :position, station.position_in(@route) %>
+            <%= hidden_field_tag :route_id, @route.id %>
+            <%= submit_tag 'save' %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+<% end %>
+
+<p>
+  <%= link_to 'Edit', edit_route_path(@route) %> |
+  <%= link_to 'Back', routes_path %>
+</p>
