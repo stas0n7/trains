@@ -1,8 +1,8 @@
-<p align='center'>
+<p>
   <strong>Route:</strong>
   <%= @route.name %>
 </p>
-<p align='center'>
+<p>
   <% if @route.trains.empty? %>
     <strong>No trains on this route</strong>
   <% else %>
@@ -52,7 +52,7 @@
   </table>
 <% end %>
 <br>
-<p align='center'>
+<p>
   <%= link_to 'Edit', edit_admin_route_path(@route) %> |
   <%= link_to 'Back', admin_routes_path %>
 </p>

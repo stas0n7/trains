@@ -1,5 +1,16 @@
 <h2><%= t('.title') %></h2>
 
-<%= render 'form', railway_station: @railway_station %>
+<%= form_with(model: [:admin, @railway_station], local: true) do |form| %>
+
+  <%= render 'common/errors', resource: @railway_station %>
+
+  <div class="field">
+    <%= form.text_field :title, class: 'form-control col-3', required: true, placeholder: 'input title' %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit t('.submit'), class: 'btn btn-primary' %>
+  </div>
+<% end %>
 
 <%= link_to t('common.back'), admin_railway_stations_path %>

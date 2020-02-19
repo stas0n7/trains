@@ -23,7 +23,7 @@ class TicketsController < ApplicationController
     if @ticket.save
       redirect_to @ticket
     else
-      render :new
+      redirect_back(fallback_location: new_ticket_path, alert: 'Name and surname cant be blank')
     end
   end
 

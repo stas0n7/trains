@@ -13,9 +13,6 @@ class Admin::RailwayStationsController < Admin::BaseController
     @railway_station = RailwayStation.new
   end
 
-  def edit
-  end
-
   def create
     @railway_station = RailwayStation.new(railway_station_params)
     if @railway_station.save
@@ -27,9 +24,9 @@ class Admin::RailwayStationsController < Admin::BaseController
 
   def update
     if @railway_station.update(railway_station_params)
-      redirect_to [:admin, @railway_station], notice: 'Railway station was successfully updated.'
+      redirect_to admin_railway_stations_path, notice: 'Railway station was successfully updated.'
     else
-      render :edit
+      redirect_to admin_railway_stations_path, alert: "Title can't be blank."
     end
   end
 
