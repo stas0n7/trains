@@ -1,8 +1,13 @@
 class TicketsController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_ticket, only: [:show, :destroy]
 
   def index
-    @tickets = Ticket.all
+    if current_user
+      @tickets = current_user.tickets
+    else
+      @tickets = []
+    end
   end
 
   def new
@@ -15,7 +20,7 @@ class TicketsController < ApplicationController
   end
 
   def create
-    @ticket = Ticket.new(params_ticket)
+    @ticket = current_user.tickets.new(params_ticket)
     if @ticket.save
       redirect_to @ticket
     else

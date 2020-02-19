@@ -1,4 +1,4 @@
-<h2 align='center'>Found routes:</h2>
+<h2 align='center'>Found trains:</h2>
 <table>
   <thead>
     <tr>
@@ -11,34 +11,37 @@
 
   </thead>
   <tbody>
-
-    <% @routes.each do |route| %>
-      <% route.trains.each do |train| %>
-        <tr>
-          <td><%= train.number %></td>
-          <td><%= route.name %></td>
-          <td>
-            <% route.railway_stations.each do |station| %>
-              <ul>
-                <%= station.title %>
-              </ul>
-            <% end %>
-          </td>
-          <td>
-            <% route.railway_stations.each do |station| %>
-              <ul>
-                <%= "#{station.arrival_in(route)} - #{station.depart_in(route)}" %>
-              </ul>
-            <% end %>
-          </td>
-          <td>
-            <%= form_tag new_ticket_path, method: :get do %>
-              <%= hidden_field_tag :train_id, train.id %>
-              <%= hidden_field_tag :route_id, route.id %>
-              <%= submit_tag 'Buy' %>
-            <% end %>
-          </td>
-        <tr>
+    <% if @routes.empty? %>
+      <h2 align='center'>Trains not found</h2>
+    <% else %>
+      <% @routes.each do |route| %>
+        <% route.trains.each do |train| %>
+          <tr>
+            <td><%= train.number %></td>
+            <td><%= route.name %></td>
+            <td>
+              <% route.railway_stations.each do |station| %>
+                <ul>
+                  <%= station.title %>
+                </ul>
+              <% end %>
+            </td>
+            <td>
+              <% route.railway_stations.each do |station| %>
+                <ul>
+                  <%= "#{station.arrival_in(route)} - #{station.depart_in(route)}" %>
+                </ul>
+              <% end %>
+            </td>
+            <td>
+              <%= form_tag new_ticket_path, method: :get do %>
+                <%= hidden_field_tag :train_id, train.id %>
+                <%= hidden_field_tag :route_id, route.id %>
+                <%= submit_tag 'Buy' %>
+              <% end %>
+            </td>
+          <tr>
+        <% end %>
       <% end %>
     <% end %>
   </tbody>

@@ -13,11 +13,6 @@
     <%= form.hidden_field :train_id, value: @train.id %>
   </div>
 
-  <div class='field'>
-    <%= form.label "choise your account" %>
-    <%= form.collection_select :user_id, User.all, :id, :name %>
-  </div>
-
   <div class="field">
     <%= form.label 'first name' %>
     <%= form.text_field :first_name %>

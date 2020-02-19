@@ -1,0 +1,13 @@
+<%= form_with(model: [:admin, @train, @sv_carriage], local: true) do |form| %>
+  <%= render 'common/errors', resource: @sv_carriage %>
+
+  <div class="field">
+    <%= form.label :bottom_seats %>
+    <%= form.text_field :bottom_seats %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
