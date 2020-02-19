@@ -15,6 +15,19 @@ class RailwayStation < ApplicationRecord
     station_route(route).try(:position)
   end
 
+  def update_arr_dep(route, arrival, depart)
+    station_route = station_route(route)
+    station_route.update(arrival_time: arrival, depart_time: depart)
+  end
+
+  def arrival_in(route)
+    station_route(route).arrival_time
+  end
+
+  def depart_in(route)
+    station_route(route).depart_time
+  end
+
   protected
 
   def station_route(route)

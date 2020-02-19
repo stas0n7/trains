@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-  before_action :set_ticket, only: [:show, :edit, :update, :destroy]
+  before_action :set_ticket, only: [:show, :destroy]
 
   def index
     @tickets = Ticket.all
@@ -7,6 +7,8 @@ class TicketsController < ApplicationController
 
   def new
     @ticket = Ticket.new
+    @train = Train.find(params[:train_id])
+    @route = Route.find(params[:route_id])
   end
 
   def show
@@ -21,17 +23,6 @@ class TicketsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-    if @ticket.update(params_ticket)
-      redirect_to @ticket
-    else
-      render :edit
-    end
-  end
-
   def destroy
     @ticket.destroy
     redirect_to tickets_path
@@ -40,7 +31,7 @@ class TicketsController < ApplicationController
   private
 
   def params_ticket
-    params.require(:ticket).permit(:passanger, :first_station, :last_station)
+    params.require(:ticket).permit(:user_id, :train_id, :passanger, :first_name, :last_name)
   end
 
   def set_ticket

@@ -24,19 +24,25 @@
       <tr>
         <td width='100px'>Station</td>
         <td>Position</td>
+        <td>Arrival</td>
+        <td>Depart</td>
       </tr>
     </thead>
     <tbody>
     <% @route.railway_stations.ordered.each do |station| %>
       <tr>
         <td><%= station.title %></td>
-        <td>
-          <%= form_tag update_position_railway_station_path, method: :patch do %>
+        <%= form_tag update_position_railway_station_path(station), method: :patch do %>
+          <td>
             <%= number_field_tag :position, station.position_in(@route) %>
             <%= hidden_field_tag :route_id, @route.id %>
+          </td>
+          <td><%= time_field_tag :arrival, station.arrival_in(@route) %></td>
+          <td>
+            <%= time_field_tag :depart, station.depart_in(@route) %>
             <%= submit_tag 'save' %>
-          <% end %>
-        </td>
+          </td>
+        <% end %>
       </tr>
     <% end %>
     </tbody>

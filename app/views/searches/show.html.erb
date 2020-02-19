@@ -1,0 +1,47 @@
+<h2 align='center'>Found routes:</h2>
+<table>
+  <thead>
+    <tr>
+      <td width='100px'><strong>Trains</strong></td>
+      <td width='200px'><strong>Route</strong></td>
+      <td width='200px'><strong>Stations</strong></td>
+      <td width='200px'><strong>Time Arrival-Depart</strong></td>
+      <td><strong>Buy ticket</strong></td>
+    </tr>
+
+  </thead>
+  <tbody>
+
+    <% @routes.each do |route| %>
+      <% route.trains.each do |train| %>
+        <tr>
+          <td><%= train.number %></td>
+          <td><%= route.name %></td>
+          <td>
+            <% route.railway_stations.each do |station| %>
+              <ul>
+                <%= station.title %>
+              </ul>
+            <% end %>
+          </td>
+          <td>
+            <% route.railway_stations.each do |station| %>
+              <ul>
+                <%= "#{station.arrival_in(route)} - #{station.depart_in(route)}" %>
+              </ul>
+            <% end %>
+          </td>
+          <td>
+            <%= form_tag new_ticket_path, method: :get do %>
+              <%= hidden_field_tag :train_id, train.id %>
+              <%= hidden_field_tag :route_id, route.id %>
+              <%= submit_tag 'Buy' %>
+            <% end %>
+          </td>
+        <tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<p align='center'><%= link_to 'back to search', new_search_path %></p>

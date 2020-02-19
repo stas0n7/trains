@@ -3,6 +3,7 @@ class Train < ApplicationRecord
   belongs_to :railway_station
   belongs_to :route
   has_many :carriages
+  has_many :tickets
 
   
 
