@@ -1,0 +1,57 @@
+ru:
+  layouts:
+    application:
+      account: 'Акаунт:'
+    admin:
+      account: 'Акаунт:'
+  welcome:
+    index:
+      search_tickets: 'Поиск билетов'
+  common:
+    show: 'Показать'
+    edit: 'Редактировать'
+    destroy: 'Удалить'
+    back: 'Назад'
+    errors: 'При заполнении формы возникли ошибки'
+    login: 'Войти'
+    logout: 'Выйти'
+    email: 'Почта'
+    trains: 'Поезда'
+    railway_stations: 'Станции'
+    routes: 'Маршруты'
+    tickets: 'Билеты'
+  admin:
+    railway_stations:
+      index:
+        new_station: 'Новая станция'
+      new:
+        title: 'Новая станция'
+      form:
+        submit: "%{action} станцию"
+  devise:
+    sessions:
+      new:
+        password: 'Пароль'
+        remember: 'Запомнить меня'
+    shared:
+      links:
+        sign_up: 'Зарегистрироваться'
+        forgot_password: 'Забыли ваш пароль?'
+        didnt_receive_confirm: 'Не получили подтверждение с инстарукциями?'
+        didnt_receive_unlock: 'Не получил инструкции по разблокировке?'
+    registrations:
+      new:
+        sign_up: 'Зарегистрироваться'
+        email: 'Почта'
+        name: 'Имя'
+        surname: 'Фамилия'
+        password: 'Пароль'
+        characters_minimum: 'Минимум символов'
+        password_confirmation: 'Подтверждение пароля'
+    passwords:
+      new:
+        forgot_your_password: 'Забыли ваш пароль?'
+        send_me_reset_password_instructions: 'отправить мне инструкции по сбросу пароля'
+    confirmations:
+      new:
+        resend_confirmation: 'Отправить подтвеждение'

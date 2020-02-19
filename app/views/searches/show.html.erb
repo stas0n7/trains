@@ -21,22 +21,17 @@
             <td><%= route.name %></td>
             <td>
               <% route.railway_stations.each do |station| %>
-                <ul>
-                  <%= station.title %>
-                </ul>
+                <%= station.title %><br>
               <% end %>
             </td>
             <td>
               <% route.railway_stations.each do |station| %>
-                <ul>
-                  <%= "#{station.arrival_in(route)} - #{station.depart_in(route)}" %>
-                </ul>
+                <%= "#{station.arrival_in(route)} - #{station.depart_in(route)}" %><br>
               <% end %>
             </td>
             <td>
               <%= form_tag new_ticket_path, method: :get do %>
                 <%= hidden_field_tag :train_id, train.id %>
-                <%= hidden_field_tag :route_id, route.id %>
                 <%= submit_tag 'Buy' %>
               <% end %>
             </td>

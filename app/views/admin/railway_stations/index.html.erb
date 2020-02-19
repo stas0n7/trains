@@ -1,5 +1,5 @@
 
-<h1>Railway Stations</h1>
+<h1><%= t('common.railway_stations') %></h1>
 
 <table>
   <thead>
@@ -16,5 +16,5 @@
 
 <br>
 
-<%= link_to 'New Railway Station', new_admin_railway_station_path %>
+<%= link_to t('.new_station'), new_admin_railway_station_path %>
 <p><%= link_to 'Back to main', root_path %></p>
