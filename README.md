@@ -32,19 +32,3 @@ Admin can:
 * Designate stations for routes;
 * Designate routes for trains;
 * To indicate date and time of departure and arrival train on the each station
-
-
-
-
-
-
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
